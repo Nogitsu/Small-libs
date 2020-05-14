@@ -148,24 +148,7 @@ function ModifyScreenTexture( x, y, w, h, texture )
     } )
 end
 
---  > Testing
-hook.Add( "HUDPaint", "Shaders:Test", function()
-    local w, h = ScrW(), ScrH()
-    local box_w, box_h = w / 3, h / 3
-
-    --ModifyScreenSobel( w - math.cos( CurTime() ) * ( w + box_w ), 0, box_w, h, 0.02 )
-
---[[     DrawBlackAndWhite( 0, 0, w, box_h )
-    ModifyScreenSharp( 0, box_h, w, box_h, 1, 5 )
-    ModifyScreenSobel( 0, box_h * 2, w, box_h, 0.2 ) ]]
-
---[[     DrawBlackAndWhite( 0, 0, box_w, h )
-    ModifyScreenSharp( box_w, 0, box_w, h, 1, 5 )
-    ModifyScreenSobel( box_w * 2, 0, box_w, h, 0.02 ) ]]
-
-    DrawBlackAndWhite( 0, 0, w * math.abs( math.cos( CurTime() ) ), h )
-end )
-
+--  > Now we want the shaders added from HUDPaint to draw
 hook.Add( "RenderScreenspaceEffects", "Shaders:QueueThreat", function()
     for k, v in ipairs( shaders_queue ) do
         ModifyScreenShader( unpack( v ) )
