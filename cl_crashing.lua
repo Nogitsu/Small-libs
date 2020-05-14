@@ -1,3 +1,8 @@
+--[[
+    Code by Nogitsu, all my small libs available here: https://github.com/Nogitsu/Small-libs
+    Please do not remove these lines, I am using my time for these libs, so consider it.
+]]
+
 if not CLIENT then return end
 
 local last_ft, last_equality, crashing = 0, 0, false
